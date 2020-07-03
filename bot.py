@@ -11,7 +11,7 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(commands=['start'])
 async def start(msg: types.message):
-  await msg.answer("🌬️Проверка...🌬️")
+  await msg.answer("🌬️Я пока ничего не умею!?🌬️")
 
 
 
