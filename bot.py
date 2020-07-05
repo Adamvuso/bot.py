@@ -13,20 +13,13 @@ dp = Dispatcher(bot)
 async def start(msg: types.message):
   await msg.answer("🌬️Я пока ничего не умею!?🌬️")
 
-@dp.message_handler(commands= ['test'])
-@dp.async_task
-async def test(msg: types.message):
-    a = 'удалить'
-    b = 'выключено'
-    i_b_1 = types.InlineKeyboardButton(a, callback_data='b1')
-    i_b_2 = types.InlineKeyboardButton(b, callback_data= 'b2')
-    i_k_1 = types.InlineKeyboardMarkup().add(i_b_1, i_b_2)
-    print(msg.from_user.id)
-    await msg.answer('Что хочешь узнать?', reply_markup = i_k_1)
-    await asyncio.sleep(10)
-    c_i = msg.chat.id
-    m_i = msg.message_id +1
-    await bot.message("Testiruem epti")
+button_hi = KeyboardButton('Привет! 👋')
+
+greet_kb = ReplyKeyboardMarkup()
+greet_kb.add(button_hi)
+@dp.message_handler(commands=['klava'])
+async def process_start_command(message: types.Message):
+    await message.reply("Привет!", 
 
 
 
