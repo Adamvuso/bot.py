@@ -1,4 +1,5 @@
 from aiogram import Bot, Dispatcher, executor, types
+from  aiogram . types  import  ReplyKeyboardRemove , ReplyKeyboardMarkup , KeyboardButton , InlineKeyboardMarkup , InlineKeyboardButton
 
 API_TOKEN = '1324835503:AAEWZ6NY_MskhIVq4VQfnKEKwkOuO0MZT8Y'
 
@@ -12,14 +13,6 @@ dp = Dispatcher(bot)
 @dp.message_handler(commands=['start'])
 async def start(msg: types.message):
   await msg.answer("🌬️Я пока ничего не умею!?🌬️")
-
-button_hi = KeyboardButton('Привет! 👋')
-
-greet_kb = ReplyKeyboardMarkup()
-greet_kb.add(button_hi)
-@dp.message_handler(commands=['klava'])
-async def process_start_command(message: types.Message):
-    await message.reply("Привет!",  reply_markup=kb.greet_kb)
 
 
 
