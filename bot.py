@@ -13,7 +13,7 @@ greet_kb = ReplyKeyboardMarkup()
 greet_kb.add(button_hi)
 @dp.message_handler(commands=['test'])
 async def process_start_command(message: types.Message):
-    await message.reply("Привет!", 
+    await message.reply("Привет!",reply_markup=kb.greet_kb) 
 
 @dp.message_handler(commands=['start'])
 async def start(msg: types.message):
